@@ -1,0 +1,15 @@
+{
+  "name": "grade-calculator-a1",
+  "version": "1.0.0",
+  "description": "For calculating GPA",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/grade-calculator-a1.git"
+  },
+  "author": "Nick Yang",
+  "license": "ISC"
+}
