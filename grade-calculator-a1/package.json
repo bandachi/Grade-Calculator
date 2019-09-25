@@ -11,5 +11,8 @@
     "url": "https://git.heroku.com/grade-calculator-a1.git"
   },
   "author": "Nick Yang",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-static": "^0.7.11"
+  }
 }
