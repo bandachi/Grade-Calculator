@@ -18,61 +18,15 @@
 
       <p>Give grades to the numeric activities:</p>
 
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Short Name</th>
-          <th>Weight</th>
-          <th>Grade</th>
-          <th>Percent</th>
-        </tr>
-        <tr>
-          <td>Activity 1</td>
-          <td>A1</td>
-          <td><input type="text" ... /></td>
-          <td>
-            <input type="text" ... />/
-            <br><input type="text" ... />
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Activity 2</td>
-          <td>A2</td>
-          <td><input type="text" ... /></td>
-          <td>
-            <input type="text" ... />/
-            <br><input type="text" ... />
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Activity 3</td>
-          <td>A3</td>
-          <td><input type="text" ... /></td>
-          <td>
-            <input type="text" ... />/
-            <br><input type="text" ... />
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Activity 4</td>
-          <td>A4</td>
-          <td><input type="text" ... /></td>
-          <td>
-            <input type="text" ... />/
-            <br><input type="text" ... />
-          </td>
-          <td></td>
-        </tr>
-      </table>
+      <script>makeTable();</script>
+
 
       <h2>Result</h2>
+      <p id="result"></p>
 
       <div id="buttons">
-        <button>WEIGHTED</button>
-        <button>MEAN</button>
+        <button onclick="calcWeighted()">WEIGHTED</button>
+        <button onclick="calcMean()">MEAN</button>
       </div>
     </div>
   </div>
