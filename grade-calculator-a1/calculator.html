@@ -20,8 +20,6 @@
 
       <input type="number" min=0 id = "precision" onkeyup="setPrecision()" placeHolder = "0 to 14"/>
       <button onclick = "updatePrecision()" min=0 max=14>SET DECIMAL PRECISION</button>
-      <button onclick="addRow()">ADD ROW</button>
-      <button onclick="deleteRow()">DELETE ROW</button>
 
       <p id = "table"><script>makeTable();</script></p>
 
@@ -31,6 +29,8 @@
 
 
       <div id="buttons">
+        <button onclick="addRow()">ADD ROW</button>
+        <button onclick="deleteRow()">DELETE ROW</button>
         <button onclick="calcWeighted()">WEIGHTED</button>
         <button onclick="calcMean()">MEAN</button>
       </div>

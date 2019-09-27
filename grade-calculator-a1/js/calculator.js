@@ -110,7 +110,7 @@ function calcMean() {
 
   decimal /= rows;
 
-  document.getElementById("result").innerHTML = decimal + "/100";
+  document.getElementById("result").innerHTML = setToPrecision(decimal) + "/100";
 }
 
 //Calculates the weighted average and displays it
@@ -145,10 +145,66 @@ function calcWeighted() {
   document.getElementById("result").innerHTML = setToPrecision(decimal) + "/100";
 }
 
+//Makes a new table with all the old values
+function refreshTable() {
+  var tempNums = document.getElementsByClassName("numerator");
+  var tempNumVals = [];
+  for (var i = 0; i < tempNums.length; i++) {
+    tempNumVals.push(parseFloat(tempNums[i].value));
+  }
+
+  var tempDens = document.getElementsByClassName("denominator");
+  var tempDenVals = [];
+  for (var i = 0; i < tempDens.length; i++) {
+    tempDenVals.push(parseFloat(tempDens[i].value));
+  }
+
+  var tempWeights = document.getElementsByClassName("weight");
+  var tempWeightVals = [];
+  for (var i = 0; i < tempWeights.length; i++) {
+    tempWeightVals.push(parseFloat(tempWeights[i].value));
+  }
+
+  var tempPercents = document.getElementsByClassName("percent");
+  var tempPercentVals = [];
+  for (var i = 0; i < tempPercents.length; i++) {
+    tempPercentVals.push(tempPercents[i].innerHTML);
+  }
+
+  var tempResult = document.getElementById("result").innerHTML;
+
+  makeTable();
+
+  var nums = document.getElementsByClassName("numerator");
+
+  length = Math.min(nums.length, tempNumVals.length);
+
+  for (var i = 0; i < length; i++) {
+    nums[i].value = tempNumVals[i];
+  }
+
+  var dens = document.getElementsByClassName("denominator");
+  for (var i = 0; i < length; i++) {
+    dens[i].value = tempNumVals[i];
+  }
+
+  var weights = document.getElementsByClassName("weight");
+  for (var i = 0; i < length; i++) {
+    weights[i].value = tempWeightVals[i];
+  }
+
+  var percents = document.getElementsByClassName("percent");
+  for (var i = 0; i < length; i++) {
+    percents[i].innerHTML = tempPercentVals[i];
+  }
+
+  document.getElementById("result").innerHTML = tempResult;
+}
+
 //Adds new row to table and resets all fields
 function addRow() {
   rows++;
-  makeTable();
+  refreshTable();
 }
 
 //Adds new row to table and resets all fields
@@ -157,7 +213,7 @@ function deleteRow() {
     rows--;
   }
 
-  makeTable();
+  refreshTable();
 }
 
 //Sets dPrecision to the same value as in the text input
