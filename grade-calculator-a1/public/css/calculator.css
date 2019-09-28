@@ -24,7 +24,7 @@ table {
 }
 
 th {
-  background-color: #C0C0C0;
+  background-color: #E0E0E0;
   padding: 5px;
   text-align: left;
   border: solid 1pt #C0C0C0;
@@ -47,7 +47,7 @@ td {
 }
 
 #greyBox {
-  background-color:#DCDCDC;
+  background-color:#F0F0F0;
   padding: 0px 10px;
   margin: 10px 0px;
   max-width: 730px;
