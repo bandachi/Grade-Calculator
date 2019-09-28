@@ -45,6 +45,7 @@ function makeTable() {
 
 //Updates the percent displayed on input
 function updatePercent(row) {
+  //Checking for valid input
 	var nums = document.getElementsByClassName("numerator");
 
   if (nums[row].value < 0) {
@@ -63,6 +64,7 @@ function updatePercent(row) {
     return;
   }
 
+  //Updating percent
   var percent = (nums[row].value/dens[row].value)*100;
 	var percents = document.getElementsByClassName("percent");
   percents[row].innerHTML = setToPrecision(percent) + "%";
@@ -91,6 +93,7 @@ function emptyField(arr) {
 
 //Calculates the average and displays it
 function calcMean() {
+  //Checking for valid input
   var nums = document.getElementsByClassName("numerator");
   if (emptyField(nums)) {
     alert("Empty numerator field");
@@ -103,6 +106,7 @@ function calcMean() {
     return;
   }
 
+  //Calculating mean
   var decimal = 0;
   for (var r = 0; r < rows; r++) {
     decimal += (nums[r].value/dens[r].value)*100;
@@ -115,6 +119,7 @@ function calcMean() {
 
 //Calculates the weighted average and displays it
 function calcWeighted() {
+  //Checking for valid input
   var nums = document.getElementsByClassName("numerator");
   if (emptyField(nums)) {
     alert("Empty numerator field");
@@ -133,6 +138,7 @@ function calcWeighted() {
     return;
   }
 
+  //Calculating weighted average
   var decimal = 0;
   var weightSum = 0;
   for (var r = 0; r < rows; r++) {
@@ -145,8 +151,9 @@ function calcWeighted() {
   document.getElementById("result").innerHTML = setToPrecision(decimal) + "/100";
 }
 
-//Makes a new table with all the old values
+//Makes a new table with all the old values and resets result
 function refreshTable() {
+  //Storing old values
   var tempNums = document.getElementsByClassName("numerator");
   var tempNumVals = [];
   for (var i = 0; i < tempNums.length; i++) {
@@ -171,10 +178,10 @@ function refreshTable() {
     tempPercentVals.push(tempPercents[i].innerHTML);
   }
 
-  var tempResult = document.getElementById("result").innerHTML;
-
+  //Creaing new table
   makeTable();
 
+  //Loading in old values
   var nums = document.getElementsByClassName("numerator");
 
   length = Math.min(nums.length, tempNumVals.length);
@@ -185,7 +192,7 @@ function refreshTable() {
 
   var dens = document.getElementsByClassName("denominator");
   for (var i = 0; i < length; i++) {
-    dens[i].value = tempNumVals[i];
+    dens[i].value = tempDenVals[i];
   }
 
   var weights = document.getElementsByClassName("weight");
@@ -198,7 +205,7 @@ function refreshTable() {
     percents[i].innerHTML = tempPercentVals[i];
   }
 
-  document.getElementById("result").innerHTML = tempResult;
+  document.getElementById("result").innerHTML = "";
 }
 
 //Adds new row to table and resets all fields
@@ -231,7 +238,7 @@ function checkPrecision() {
     alert("Invalid precision input");
     precision.value = "";
     return false;
-  } else if (Math.round(parseFloat(precision.value)) != parseFloat(precision.value)) {
+  } else if (precision.value != "" && Math.round(parseFloat(precision.value)) != parseFloat(precision.value)) {
     alert("Please insert a whole number");
     precision.value = "";
     return false;
@@ -267,8 +274,11 @@ function setToPrecision(num) {
 
 //Updates all numbers to fit inside precision
 function updatePrecision() {
+  for (i = 0; i < rows; i++) {
+    updatePercent(i);
+  }
   var percents = document.getElementsByClassName("percent");
   setPercentsToPrecision(percents);
   var result = document.getElementById("result");
-  result.innerHTML = setToPrecision(result.innerHTML);
+  result.innerHTML = "";
 }
