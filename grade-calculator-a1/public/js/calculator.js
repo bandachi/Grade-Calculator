@@ -21,7 +21,7 @@ function makeTable() {
   //Making other cells
   for(var r = 0; r < rows; r++) {
     table += ('<tr>\
-      <td>\
+      <td contenteditable="true">\
         Activity '
         + (r + 1) +
       '</td>\
