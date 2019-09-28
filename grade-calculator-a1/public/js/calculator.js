@@ -29,7 +29,7 @@ function makeTable() {
         A'
         + (r + 1) +
       '</td>\
-      <td><input type="number" min=0 class = "weight" id = '+ r +'onkeyup = checkWeight(id) step=any /></td>\
+      <td><input type="number" min=0 class = "weight" id = '+ r +' onkeyup = checkWeight(id) step=any /></td>\
       <td>\
         <input type="number" min=0 class = "numerator" id = '+ r +' onkeyup = updatePercent(id) step=any />/\
         <br><input type="number" min=1 class = "denominator" id = '+ r +'  onkeyup = updatePercent(id) step=any />\
