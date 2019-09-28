@@ -1,0 +1,23 @@
+{
+  "name": "grade-calculator-a1",
+  "version": "1.0.0",
+  "description": "Grade calculator for CMPT 276",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bandachi/Grade-Calculator.git"
+  },
+  "author": "Hyeonseob Yang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bandachi/Grade-Calculator/issues"
+  },
+  "homepage": "https://github.com/bandachi/Grade-Calculator#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}

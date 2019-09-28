@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CourSys Tester</title>
+  <link rel="stylesheet" href="css/calculator.css" />
+  <script src="js/calculator.js"></script>
+</head>
+
+<body>
+
+  <div id="whiteBox">
+
+  <h1>Grade Calculator</h1>
+
+    <div id="greyBox">
+
+      <h2>Activities</h2>
+
+      <p>Give grades to the numeric activities:</p>
+
+      <input type="number" min=0 id = "precision" onkeyup="setPrecision()" placeHolder = "0 to 14"/>
+      <button onclick = "updatePrecision()" min=0 max=14>SET DECIMAL PRECISION</button>
+
+      <p id = "table"><script>makeTable();</script></p>
+
+
+      <h2>Result</h2>
+      <p id="result"></p>
+
+
+      <div id="buttons">
+        <button onclick="addRow()">ADD ROW</button>
+        <button onclick="deleteRow()">DELETE ROW</button>
+        <button onclick="calcWeighted()">WEIGHTED</button>
+        <button onclick="calcMean()">MEAN</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
